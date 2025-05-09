@@ -1,0 +1,26 @@
+{
+  "name": "EmaiZY - Your Smart Email Assistant",
+  "description": "An AI-powered smart email assistant designed to help you compose and reply to emails effortlessly with customizable tones, enhancing productivity and communication effectiveness.",
+  "version": "1.0",
+  "manifest_version": 3,
+  "permissions": ["activeTab", "storage"],
+  "host_permissions": ["http://localhost:8080/*", "*://mail.google.com/*"],
+  "content_scripts": [
+    {
+      "js": ["content.js"],
+      "matches": ["*://mail.google.com/*"],
+      "css": ["content.css"],
+      "run_at": "document_end"
+    }
+  ],
+  "web_accessible_resources": [
+    {
+      "resources": ["icons/*"],
+      "matches": ["*://mail.google.com/*"]
+    }
+  ],
+  "action": {
+    "default_title": "EmaiZY - Your Smart Email Assistant",
+    "default_icon": "EmaiZY_ICON.png"
+  }
+}
